@@ -11,7 +11,14 @@
     <br>
     <span class="float-left">
       <div class="button_cont float-right element" id="plc">
+        {% if user.is_authenticated%}
+        <form action="/like_specific/{{experience.id}}" style="display: inline;" method="post">{% csrf_token %}
         <button class="like" > <span> <img id="like" src="{% static "h_a.png" %}"><p>{{experience.likes}}</p></button>
+        </form>
+        {% else %}
+        <button class="like" > <span> <img id="like" src="{% static "h_a.png" %}"><p>{{experience.likes}}</p></button>
+        <p>Login to like</p>
+        {% endif %}
       </div>
     </span>
   </div>

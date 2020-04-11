@@ -24,6 +24,8 @@ urlpatterns = [
     path('signin',views.signin,name='signin'),
     path('myexperience',views.myexperience,name='myexperience'),
     path('add_experience',views.add_experience,name='add_experience'),
+    path('like_main/<int:experience_id>',views.like_main,name='like_main'),
+    path('like_specific/<int:experience_id>',views.like_specific,name='like_specific'),
     path('delete_experience/<int:experience_id>',views.delete_experience,name='delete_experience'),
     path('signout',views.signout,name='signout'),
     path('admin/', admin.site.urls),

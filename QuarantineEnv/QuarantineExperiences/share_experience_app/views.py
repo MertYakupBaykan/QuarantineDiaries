@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from share_experience_app.forms import UserForm
-from .models import ExperienceItem
+from .models import ExperienceItem,Like
 #login
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect, HttpResponse
@@ -73,6 +73,33 @@ def add_experience(request):
     new_item = ExperienceItem(content = request.POST['content'],title = request.POST['title'],user = request.user.username)
     new_item.save()
     return HttpResponseRedirect('myexperience')
+
+def like_main(request,experience_id):
+    item_to_like  = ExperienceItem.objects.get(id=experience_id)
+    new_like, created = Like.objects.get_or_create(user=request.user, experience_id = experience_id)
+    if not created:
+        new_like.delete()
+        item_to_like.likes -= 1
+        item_to_like.save()
+        return HttpResponseRedirect(reverse('index'))
+    else:
+        item_to_like.likes += 1
+        item_to_like.save()
+        return HttpResponseRedirect(reverse('index'))
+
+def like_specific(request,experience_id):
+    item_to_like  = ExperienceItem.objects.get(id=experience_id)
+
+    new_like, created = Like.objects.get_or_create(user=request.user, experience_id = experience_id)
+    if not created:
+        new_like.delete()
+        item_to_like.likes -= 1
+        item_to_like.save()
+        return render(request,'post_detail.html',{'experience':item_to_like})
+    else:
+        item_to_like.likes += 1
+        item_to_like.save()
+        return  render(request,'post_detail.html',{'experience':item_to_like})
 
 def delete_experience(request, experience_id):
     item_to_delete = ExperienceItem.objects.get(id=experience_id)

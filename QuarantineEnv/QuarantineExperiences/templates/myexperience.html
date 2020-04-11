@@ -10,7 +10,7 @@
           <a href="post_detail/{{experience.id}}"><h3>{{ experience.title }} - {{experience.id}}</h3></a>
           <form action="/delete_experience/{{experience.id}}" style="display: inline;" method="post">{% csrf_token %}
             <div class="button_cont float-right">
-              <button type="submit"  class="but1" style="margin-top: -90px">Delete</button>
+              <button type="submit"  class="but1" style="margin-top: -30px">Delete</button>
             </div>
           </form>
         </div>
@@ -21,10 +21,10 @@
       <div class="container">
       <form action="add_experience" method="post">{% csrf_token %}
         <div class="form-group">
-          <input type="text" class="form-control" name="title"/>
+          <input type="text" class="form-control" maxlength="100" name="title"/>
         </div>
         <div class="form-group">
-          <textarea name="content" class="form-control" rows="6"></textarea>
+          <textarea name="content" class="form-control" maxlength="1000" rows="6"></textarea>
         </div>
         <div class="clearfix">
           <div class="button_cont float-right">
