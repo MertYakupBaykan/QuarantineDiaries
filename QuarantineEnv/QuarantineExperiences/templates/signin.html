@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{% extends 'supp.html' %} {% block content %}
+{% load staticfiles %}
     <div class="container signup-container">
       <div class="jumbotron">
-        <h1>Please Login</h1>
+        <h2>Share Your Experience With the Coronavirus Outbreak</h2>
         <form action="{% url 'signin' %}" method="post">
 
           {% csrf_token %}
@@ -25,5 +19,4 @@
         </form>
       </div>
     </div>
-  </body>
-</html>
+{% endblock %}

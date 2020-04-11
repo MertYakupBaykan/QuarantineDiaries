@@ -19,10 +19,12 @@ from share_experience_app import views
 
 urlpatterns = [
     path('',views.index,name='index'),
+    path('post_detail/<int:experience_id>',views.post_detail,name='post_detail'),
     path('signup',views.signup,name='signup'),
     path('signin',views.signin,name='signin'),
     path('myexperience',views.myexperience,name='myexperience'),
     path('add_experience',views.add_experience,name='add_experience'),
     path('delete_experience/<int:experience_id>',views.delete_experience,name='delete_experience'),
+    path('signout',views.signout,name='signout'),
     path('admin/', admin.site.urls),
 ]

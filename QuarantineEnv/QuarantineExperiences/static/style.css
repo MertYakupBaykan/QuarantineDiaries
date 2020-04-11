@@ -1,0 +1,131 @@
+#logo_d {
+width: 30%
+
+}
+
+#background {
+  background-color: #FFCF4F;
+
+}
+
+/* Jumbotron itself */
+.jumbotron {
+  width: 75%;
+  margin-top: 5%;
+  margin-left:12%;
+  margin-bottom: 5%;
+}
+
+/* Style of Jumbotron*/
+#j_back {
+	background-color: #F5FFC5;
+  box-shadow: 13px 15px 0px black;
+
+}
+
+/* Style of Buttons*/
+#b_btn {
+  background-color: #FFCF4F;
+
+}
+
+
+/* SEND BUTTON */
+.but1 {
+   border-radius: 10px;
+   background-color: #4FAFFF !important;
+   border: none;
+   color: #FFFFFF;
+   text-align: center;
+   font-size: 22px;
+   padding: 10%;
+   width: 180px;
+   transition: all 0.4s;
+   cursor: pointer;
+   margin: 10px;
+ }
+ .but1 span {
+   cursor: pointer;
+   display: inline-block;
+   position: relative;
+   transition: 0.4s;
+ }
+ .but1 span:after {
+   content: '\00bb';
+   position: absolute;
+   opacity: 0;
+   top: 0;
+   right: -20px;
+   transition: 0.5s;
+ }
+ .but1:hover span {
+   padding-right: 25px;
+ }
+ .but1:hover span:after {
+   opacity: 1;
+   right: 0;
+ }
+
+/* LIKE BUTTON */
+ .like {
+    opacity: 0.6;
+    border-radius: 10px;
+    background-color: #FFAA4F !important;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 22px;
+    padding: 10px;
+    width: 80px;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin: 2px;
+  }
+.like:hover {
+  transition: 0.3s;
+  width: 100px;
+}
+.like:focus {
+  background-color: #FF524F !important;
+  transition: 0.3s;
+  width: 100px;
+  opacity: 1;
+}
+
+#like {
+  width: 30%
+
+}
+
+/* NAV BAR BUTTON */
+.nbb {
+	display: inline-block;
+  padding: 3rem 1rem;
+	border-radius: 0;
+	background-color: #516578;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 1rem;
+  line-height: 1.5;
+	font-family: "Helvetica Neue", "Georgia", sans-serif;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.nbb:hover {
+  transition: 0.3s;
+  color: #FFCF4F;
+}
+
+.nbb:active {
+  transition: 0.3s;
+}
+
+.nbb:focus {
+	outline: thin dotted #444;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+  transition: 0.3s;
+}

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 from share_experience_app.forms import UserForm
 from .models import ExperienceItem
 #login
@@ -10,7 +11,17 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    items = ExperienceItem.objects.all()
+    return render(request,'index.html',{'items': items})
+
+def post_detail(request, experience_id):
+    item_to_display = ExperienceItem.objects.get(id=experience_id)
+    return  render(request,'post_detail.html',{'experience':item_to_display})
+
+@login_required
+def signout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
 
 def signin(request):
         if request.method == 'POST':
