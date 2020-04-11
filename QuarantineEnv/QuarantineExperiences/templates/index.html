@@ -1,5 +1,8 @@
 {% extends 'supp.html' %} {% block content %}
 {% load staticfiles %}
+<div align="center">
+<img src="{% static "home.svg"%}" style="width:300px">
+</div>
 {% for item in items %}
 {% if item.content %}
 <div id="j_back" class="jumbotron">
@@ -19,7 +22,7 @@
         </form>
         {% else %}
         <button class="like" > <span> <img id="like" src="{% static "h_a.png" %}"><p>{{item.likes}}</p></button>
-        <p>Login to like</p>
+        <p>Sign in to like</p>
         {% endif %}
       </div>
     </span>
