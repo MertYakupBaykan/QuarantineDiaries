@@ -2,7 +2,7 @@
 {% load staticfiles %}
 <div id="j_back" class="jumbotron">
   <div class="container">
-    <h1>{{ experience.title }}</h1>
+    <h1>{{ experience.title }} <span class="badge badge-secondary">{{experience.tag}}</span></h1>
     <p>
       {{experience.content}}
     </p>

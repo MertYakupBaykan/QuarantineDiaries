@@ -70,7 +70,7 @@ def myexperience(request):
     return render(request, 'myexperience.html',{'all_items': all_experience_items})
 
 def add_experience(request):
-    new_item = ExperienceItem(content = request.POST['content'],title = request.POST['title'],user = request.user.username)
+    new_item = ExperienceItem(content = request.POST['content'],title = request.POST['title'],user = request.user.username,tag = request.POST['tag'])
     new_item.save()
     return HttpResponseRedirect('myexperience')
 

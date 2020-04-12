@@ -7,7 +7,7 @@
 {% if item.content %}
 <div id="j_back" class="jumbotron">
   <div class="container">
-    <h1><a href="post_detail/{{item.id}}">{{ item.title }}</a></h1>
+    <h1><a href="post_detail/{{item.id}}">{{ item.title }} <span class="badge badge-secondary">{{item.tag}}</span></a></h1>
     <p>
       {{item.content|slice:":200"|safe }}....
     </p>
@@ -18,10 +18,10 @@
       <div class="button_cont float-right element" id="plc">
         {% if user.is_authenticated %}
         <form action="/like_main/{{item.id}}" style="display: inline;" method="post">{% csrf_token %}
-        <button class="like" > <span> <img id="like" src="{% static "h_a.png" %}"><p>{{item.likes}}</p></button>
+        <button class="like disabled" > <span> <img id="like" src="{% static "h_a.png" %}"><p>{{item.likes}}</p></button>
         </form>
         {% else %}
-        <button class="like" > <span> <img id="like" src="{% static "h_a.png" %}"><p>{{item.likes}}</p></button>
+        <button class="like" disabled > <span> <img id="like" src="{% static "h_a.png" %}" ><p>{{item.likes}}</p></button>
         <p>Sign in to like</p>
         {% endif %}
       </div>

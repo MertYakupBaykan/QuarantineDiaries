@@ -7,7 +7,8 @@ class ExperienceItem(models.Model):
     content = models.TextField()
     user = models.TextField()
     likes = models.IntegerField(default=0)
-
+    tag = models.TextField(default='activity')
+    
     def __str__(self):
         return "{}({})".format(self.title,self.id)
 
