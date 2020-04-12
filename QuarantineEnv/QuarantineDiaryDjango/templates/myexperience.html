@@ -10,7 +10,7 @@
           <a href="post_detail/{{experience.id}}"><h3>{{ experience.title }}({{experience.id}}) <span class="badge badge-secondary">{{experience.tag}}</span> </h3></a>
           <form action="/delete_experience/{{experience.id}}" style="display: inline;" method="post">{% csrf_token %}
             <div class="button_cont float-right">
-              <button type="submit"  class="but1" style="margin-top: -30px">Delete</button>
+              <button type="submit"  class="but1" style="margin-top: ">Delete</button>
             </div>
           </form>
         </div>
@@ -32,6 +32,7 @@
              <option value="hobby">hobby</option>
              <option value="skill">skill</option>
              <option value="interest">interest</option>
+             <option value="information">information</option>
           </select>
         </div>
         <div class="clearfix">
